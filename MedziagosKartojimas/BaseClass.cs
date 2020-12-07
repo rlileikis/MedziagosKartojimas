@@ -6,7 +6,7 @@ namespace MedziagosKartojimas
 {
 	public abstract class BaseClass
 	{
-		public readonly string name;
+		public string name { get; }
 
 		public BaseClass(string Name)
 		{

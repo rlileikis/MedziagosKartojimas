@@ -10,24 +10,59 @@ namespace MedziagosKartojimas
 		{
 		}
 
-		string IZodisKitaip.ZodisBeBalsiu()
+		public override int NameKodas(int number)
 		{
-			throw new NotImplementedException();
+			var vardas = Name;
+			int sum = 0;
+			for (int i = 0; i < vardas.Length; i++)
+			{
+				sum += (int)vardas[i] - number;
+			}
+			return sum;
 		}
 
-		string IZodisKitaip.ZodisBePrieBalsiu()
+		public string ZodisBeBalsiu()
 		{
-			throw new NotImplementedException();
+			List<char> balses = new List<char>{'a', 'e', 'y', 'u', 'i', 'o'};
+			var sb = new StringBuilder();
+			foreach (var let in Name)
+			{
+				sb.Append(balses.Contains(let) ? string.Empty : let.ToString());
+			}
+			return sb.ToString();
 		}
 
-		string IZodisKitaip.ZodisSuPakeistomisBalsemis(char[] letter)
+		public string ZodisBePrieBalsiu()
 		{
-			throw new NotImplementedException();
+			List<char> balses = new List<char>{'a', 'e', 'y', 'u', 'i', 'o'};
+			var sb = new StringBuilder();
+			foreach (var let in Name)
+			{
+				sb.Append(balses.Contains(let) ? let.ToString() : string.Empty);
+			}
+			return sb.ToString();
 		}
 
-		string IZodisKitaip.ZodisSuPakeistomisPrieBalsemis(int num)
+		public string ZodisSuPakeistomisBalsemis(char[] letter)
 		{
-			throw new NotImplementedException();
+			List<char> balses = new List<char>{'a', 'e', 'y', 'u', 'i', 'o'};
+			var sb = new StringBuilder();
+			foreach (var let in Name)
+			{
+				sb.Append(balses.Contains(let) ? letter.ToString() : let.ToString());
+			}
+			return sb.ToString();
+		}
+
+		public string ZodisSuPakeistomisPrieBalsemis(int num)
+		{
+			List<char> balses = new List<char>{'a', 'e', 'y', 'u', 'i', 'o'};
+			var sb = new StringBuilder();
+			foreach (var letter in Name)
+			{
+				sb.Append(balses.Contains(letter) ? letter.ToString() : num.ToString());
+			}
+			return sb.ToString();
 		}
 	}
 }

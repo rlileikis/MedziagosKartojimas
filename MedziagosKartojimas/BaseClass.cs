@@ -13,6 +13,10 @@ namespace MedziagosKartojimas
 
 			Name = name;
 		}
+		protected BaseClass()
+		{
+
+		}
 
 		
 		public abstract string NameMetodas();

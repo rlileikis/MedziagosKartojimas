@@ -6,6 +6,10 @@ namespace MedziagosKartojimas
 {
 	public class AKlase : BaseClass
 	{
+		public AKlase()
+		{
+
+		}
 		public AKlase(string name) : base(name)
 		{
 		}

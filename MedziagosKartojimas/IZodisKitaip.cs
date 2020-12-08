@@ -6,5 +6,10 @@ namespace MedziagosKartojimas
 {
 	public interface IZodisKitaip
 	{
+	public string ZodisBeBalsiu();
+	public string ZodisBePrieBalsiu();
+	public string ZodisSuPakeistomisBalsemis(char[] letter);
+	public string ZodisSuPakeistomisPrieBalsemis(int num);
 	}
+
 }
